@@ -91,6 +91,8 @@ public class SettingsActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d("Notification", "onClick: 테스트 중입니다.");
+                Intent intent = new Intent(getActivity(),NotificationActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -100,9 +102,16 @@ public class SettingsActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d("usepolicy", "onClick: 테스트 중입니다.");
+                Intent intent = new Intent(getActivity(),UsePolicyActivity.class);
+                startActivity(intent);
+
             }
         });
+
         // 텍스트 크기 설정
+        /**
+         * 추후 기능 논의후 변경
+         */
         TextSize_imgbtn = (ImageButton) view.findViewById(R.id.TextSize_imgbtn);
         TextSize_imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,17 +125,15 @@ public class SettingsActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d("언어설정", "onClick: 테스트 중입니다.");
-
+                // 설정창 효면에 띄우기
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 View v = LayoutInflater.from(getActivity()).inflate(R.layout.settings_language_change,null,false);
                 builder.setView(v);
 
                 final Button button_Cancel = (Button) v.findViewById(R.id.button_Cancel);
-
-                //final EditText editTextEnglish = (EditText) view.findViewById(R.id.edittext_dialog_endlish);
-                //final EditText editTextKorean = (EditText) view.findViewById(R.id.edittext_dialog_korean);
                 button_Cancel.setText("취소");
 
+                // 알림창에서 버튼이 눌려졌을 때 -> 추후에 설정 변경까지 구현
                 final AlertDialog dialog = builder.create();
                 button_Cancel.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {                                   // 변경
@@ -135,20 +142,20 @@ public class SettingsActivity extends Fragment {
 
                     }
                 });
-
                 dialog.show();
             }
-
-
-
 
         });
 
         // 사용기록 삭제
+        /**
+         * 아직 기능 미 구현
+         */
         Delete_histoty_imgbtn= (ImageButton) view.findViewById(R.id.Delete_histoty_imgbtn);
         Delete_histoty_imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Log.d("사용기록 삭제", "onClick: 테스트 중입니다.");
             }
         });
