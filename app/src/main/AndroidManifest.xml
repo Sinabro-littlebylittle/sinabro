@@ -29,6 +29,10 @@
         <activity android:name=".MainActivity"/>
 
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="4507083e30991ba589ab3828da76bcf7"/>
+
+        <!-- 엑티비티 등록 -->
+        <activity android:name=".NotificationActivity"/>
+
     </application>
 
 </manifest>
